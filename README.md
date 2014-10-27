@@ -4,7 +4,7 @@ IT-game
 IT-project, game and .NET
 
 
-Awesome game about student, whoй
+Awesome game about student
 
 Version
 =======
