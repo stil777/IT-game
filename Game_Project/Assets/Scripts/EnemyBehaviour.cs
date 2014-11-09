@@ -8,7 +8,7 @@ public class EnemyBehaviour : MonoBehaviour
 	private GameObject Player;
 	private GameObject Wall;
 	private float Range;
-	public float Speed = 5f;
+	public float Speed = 2f;
 	private float MinDistance = 5f;
 
 	// Use this for initialization
