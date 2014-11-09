@@ -6,6 +6,7 @@ public class EnemyBehaviour : MonoBehaviour
 	public Transform Target;
 	private GameObject Enemy;
 	private GameObject Player;
+	private GameObject Wall;
 	private float Range;
 	public float Speed = 5f;
 	private float MinDistance = 5f;
@@ -15,6 +16,7 @@ public class EnemyBehaviour : MonoBehaviour
 	{
 		Enemy = GameObject.FindGameObjectWithTag ("Enemy");
 		Player = GameObject.FindGameObjectWithTag ("Player");
+		Wall = GameObject.FindGameObjectWithTag ("Wall");
 	}
 	
 	// Update is called once per frame
