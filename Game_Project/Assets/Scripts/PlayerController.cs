@@ -5,7 +5,7 @@ public class PlayerController : MonoBehaviour
 {
 	private Rigidbody2D myRigidbody;
 	private Animator anim;
-	private bool facingRigt = true;
+	private bool facingRigt = false;
 	private GameObject Enemy;
 	private GameObject Player;
 	private GameObject Wall;
