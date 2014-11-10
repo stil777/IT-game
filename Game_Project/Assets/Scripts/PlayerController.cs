@@ -27,7 +27,8 @@ public class PlayerController : MonoBehaviour
 	{
 		float moveX = Input.GetAxisRaw ("Horizontal");
 		float moveY = Input.GetAxisRaw ("Vertical");
-		anim.SetFloat ("Speed", Mathf.Abs(moveX));
+		if (moveX != 0) anim.SetFloat ("Speed", Mathf.Abs(moveX));
+		else if (moveY != 0) anim.SetFloat ("Speed", Mathf.Abs(moveY));
 		myRigidbody.velocity = new Vector2 (moveX * maxSpeed, moveY * maxSpeed);
 
 		if (facingRigt == true && moveX < 0)
