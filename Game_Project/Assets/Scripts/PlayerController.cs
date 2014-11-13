@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 	private GameObject Enemy;
 	private GameObject Player;
 	private GameObject Wall;
-	private float maxSpeed = 2f;
+	private float maxSpeed = 4f;
 	public int health = 3;
 
 	// Use this for initialization

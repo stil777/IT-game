@@ -7,8 +7,9 @@ public class EnemyBehaviour : MonoBehaviour
 	private GameObject Enemy;
 	private GameObject Player;
 	private GameObject Wall;
+	private bool facingRigt = false;
 	private float Range;
-	public float Speed = 2f;
+	public float Speed = 1.5f;
 	private float MinDistance = 5f;
 
 	// Use this for initialization
@@ -22,6 +23,7 @@ public class EnemyBehaviour : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+
 		Range = Vector2.Distance (Enemy.transform.position, Player.transform.position);
 		if (Range <= MinDistance)
 		{
@@ -39,6 +41,17 @@ public class EnemyBehaviour : MonoBehaviour
 			float Y = transform.position.y;
 			transform.position = Vector2.MoveTowards(new Vector2(X, Y),new Vector2(X + stepX * Speed, Y + stepY * Speed),3*Time.deltaTime);
 			//transform.Translate(Vector2.MoveTowards(Enemy.transform.position,Player.transform.position,Range)*Speed*Time.deltaTime);
+			if (facingRigt == true && stepX < 0)
+			{
+				facingRigt = false;
+				transform.rotation = Quaternion.Euler(transform.rotation.x,0,transform.rotation.z);
+			}
+			else if (facingRigt == false && stepX > 0)
+			{
+				facingRigt = true;
+				transform.rotation = Quaternion.Euler(transform.rotation.x,180,transform.rotation.z);
+			}
 		}
+
 	}
 }
