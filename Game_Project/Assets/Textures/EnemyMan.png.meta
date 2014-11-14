@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 071583015e7c8cc4c8655be288744985
+guid: 3af31506219b6e449a4f9f5e9d772e68
 TextureImporter:
   fileIDToRecycleName:
     21300000: EnemyMan_0
@@ -50,9 +50,9 @@ TextureImporter:
     - name: EnemyMan_0
       rect:
         serializedVersion: 2
-        x: 3
+        x: 2
         y: 61
-        width: 31
+        width: 32
         height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -70,9 +70,9 @@ TextureImporter:
     - name: EnemyMan_2
       rect:
         serializedVersion: 2
-        x: 77
+        x: 76
         y: 61
-        width: 31
+        width: 32
         height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
