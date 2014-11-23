@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
 	private bool facingRight = false;
 	private GameObject Enemy;
 	private GameObject Player;
-	//private GameObject Wall;
 	private float maxSpeed = 4f;
 	public int health = 3;
 	public int stsCards = 0;
@@ -22,7 +21,6 @@ public class PlayerController : MonoBehaviour
 		anim = GetComponent<Animator> ();
 		Enemy = GameObject.FindGameObjectWithTag ("Enemy");
 		Player = GameObject.FindGameObjectWithTag ("Player");
-		//Wall = GameObject.FindGameObjectWithTag ("Wall");
 	}
 	
 	// Update is called once per frame
@@ -39,14 +37,10 @@ public class PlayerController : MonoBehaviour
 		if (facingRight == true && moveX < 0)
 		{
 			Flip();
-			//facingRigt = false;
-			//this.transform.rotation = Quaternion.Euler(this.transform.rotation.x,0,this.transform.rotation.z);
 		}
 		else if (facingRight == false && moveX > 0)
 		{
 			Flip();
-			//facingRigt = true;
-			//this.transform.rotation = Quaternion.Euler(this.transform.rotation.x,180,this.transform.rotation.z);
 		}
 
 		//Taking damage
@@ -59,7 +53,7 @@ public class PlayerController : MonoBehaviour
 				{
 					health--;
 					lastHitTime = Time.time;
-					print("Health - " + health + "; Time: " + Time.time);
+					//print("Health - " + health + "; Time: " + Time.time);
 				}
 			}
 		}
