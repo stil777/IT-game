@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 	//private GameObject Wall;
 	private float maxSpeed = 4f;
 	public int health = 3;
+	public int stsCards = 0;
 	private float lastHitTime = -3f;
 	private float repeatDamagePeriod = 3f;
 
