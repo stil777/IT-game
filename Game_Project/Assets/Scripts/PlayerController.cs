@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 		anim = GetComponent<Animator> ();
 		Enemy = GameObject.FindGameObjectWithTag ("Enemy");
 		Player = GameObject.FindGameObjectWithTag ("Player");
-		Wall = GameObject.FindGameObjectWithTag ("Wall");
+		//Wall = GameObject.FindGameObjectWithTag ("Wall");
 	}
 	
 	// Update is called once per frame
@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
 			//facingRigt = true;
 			//this.transform.rotation = Quaternion.Euler(this.transform.rotation.x,180,this.transform.rotation.z);
 		}
+		print (health);
 	}
 
 	void Flip ()
