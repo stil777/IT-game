@@ -7,7 +7,7 @@ public class EnemyBehaviour : MonoBehaviour
 	private GameObject Enemy;
 	private GameObject Player;
 	private GameObject Wall;
-	private bool facingRigt = false;
+	private bool facingRight = false;
 	private float Range;
 	public float Speed = 1.5f;
 	private float MinDistance = 5f;
@@ -41,17 +41,26 @@ public class EnemyBehaviour : MonoBehaviour
 			float Y = transform.position.y;
 			transform.position = Vector2.MoveTowards(new Vector2(X, Y),new Vector2(X + stepX * Speed, Y + stepY * Speed),3*Time.deltaTime);
 			//transform.Translate(Vector2.MoveTowards(Enemy.transform.position,Player.transform.position,Range)*Speed*Time.deltaTime);
-			if (facingRigt == true && stepX < 0)
+			if (facingRight == true && stepX < 0)
 			{
-				facingRigt = false;
-				transform.rotation = Quaternion.Euler(transform.rotation.x,0,transform.rotation.z);
+				Flip();
+				//facingRigt = false;
+				//transform.rotation = Quaternion.Euler(transform.rotation.x,0,transform.rotation.z);
 			}
-			else if (facingRigt == false && stepX > 0)
+			else if (facingRight == false && stepX > 0)
 			{
-				facingRigt = true;
-				transform.rotation = Quaternion.Euler(transform.rotation.x,180,transform.rotation.z);
+				Flip();
+				//facingRigt = true;
+				//transform.rotation = Quaternion.Euler(transform.rotation.x,180,transform.rotation.z);
 			}
 		}
+	}
 
+	void Flip ()
+	{
+		facingRight = !facingRight;
+		Vector3 theScale = transform.localScale;
+		theScale.x *= -1;
+		transform.localScale = theScale;
 	}
 }

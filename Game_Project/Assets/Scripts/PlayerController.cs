@@ -5,7 +5,7 @@ public class PlayerController : MonoBehaviour
 {
 	private Rigidbody2D myRigidbody;
 	private Animator anim;
-	private bool facingRigt = false;
+	private bool facingRight = false;
 	private GameObject Enemy;
 	private GameObject Player;
 	private GameObject Wall;
@@ -33,19 +33,25 @@ public class PlayerController : MonoBehaviour
 		else if (myRigidbody.velocity.y != posY) anim.SetFloat ("Speed", Mathf.Abs(moveY));
 		myRigidbody.velocity = new Vector2 (moveX * maxSpeed, moveY * maxSpeed);
 
-		if (facingRigt == true && moveX < 0)
+		if (facingRight == true && moveX < 0)
 		{
-			facingRigt = false;
-			transform.rotation = Quaternion.Euler(transform.rotation.x,0,transform.rotation.z);
+			Flip();
+			//facingRigt = false;
+			//this.transform.rotation = Quaternion.Euler(this.transform.rotation.x,0,this.transform.rotation.z);
 		}
-		else if (facingRigt == false && moveX > 0)
+		else if (facingRight == false && moveX > 0)
 		{
-			facingRigt = true;
-			transform.rotation = Quaternion.Euler(transform.rotation.x,180,transform.rotation.z);
+			Flip();
+			//facingRigt = true;
+			//this.transform.rotation = Quaternion.Euler(this.transform.rotation.x,180,this.transform.rotation.z);
 		}
+	}
 
-		//anim.SetFloat ("Speed", Mathf.Abs(moveY));
-
-	
+	void Flip ()
+	{
+		facingRight = !facingRight;
+		Vector3 theScale = transform.localScale;
+		theScale.x *= -1;
+		transform.localScale = theScale;
 	}
 }
