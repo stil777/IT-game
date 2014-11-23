@@ -8,9 +8,11 @@ public class PlayerController : MonoBehaviour
 	private bool facingRight = false;
 	private GameObject Enemy;
 	private GameObject Player;
-	private GameObject Wall;
+	//private GameObject Wall;
 	private float maxSpeed = 4f;
 	public int health = 3;
+	private float lastHitTime = -3f;
+	private float repeatDamagePeriod = 3f;
 
 	// Use this for initialization
 	void Start ()
@@ -45,7 +47,22 @@ public class PlayerController : MonoBehaviour
 			//facingRigt = true;
 			//this.transform.rotation = Quaternion.Euler(this.transform.rotation.x,180,this.transform.rotation.z);
 		}
-		print (health);
+
+		//Taking damage
+		Vector2 hurtVector = Player.transform.position - Enemy.transform.position;
+		if (Time.time > lastHitTime + repeatDamagePeriod)
+		{
+			if (health > 0)
+			{
+				if (hurtVector.x * hurtVector.x + hurtVector.y * hurtVector.y < 1)
+				{
+					health--;
+					lastHitTime = Time.time;
+					print("Health - " + health + "; Time: " + Time.time);
+				}
+			}
+		}
+		//print (health);
 	}
 
 	void Flip ()
