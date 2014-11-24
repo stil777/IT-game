@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
 		{
 			if (health > 0)
 			{
-				if (hurtVector.x * hurtVector.x + hurtVector.y * hurtVector.y < 1)
+				if (hurtVector.x * hurtVector.x + hurtVector.y * hurtVector.y < 1.5f)
 				{
 					health--;
 					lastHitTime = Time.time;
