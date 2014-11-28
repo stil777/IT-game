@@ -4,7 +4,7 @@ using System.Collections;
 public class EnemyBehaviour : MonoBehaviour
 {
 	public Transform Target;
-	private GameObject Enemy;
+	//private GameObject Enemy;
 	private GameObject Player;
 	private bool facingRight = false;
 	private float Range;
@@ -14,7 +14,7 @@ public class EnemyBehaviour : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		Enemy = GameObject.FindGameObjectWithTag ("Enemy");
+		//Enemy = GameObject.FindGameObjectWithTag ("Enemy");
 		Player = GameObject.FindGameObjectWithTag ("Player");
 	}
 	
@@ -22,18 +22,18 @@ public class EnemyBehaviour : MonoBehaviour
 	void Update ()
 	{
 
-		Range = Vector2.Distance (Enemy.transform.position, Player.transform.position);
+		Range = Vector2.Distance (this.transform.position, Player.transform.position);
 		if (Range <= MinDistance)
 		{
 			int stepX = 1;
 			int stepY = 1;
-			if (Player.transform.position.x < Enemy.transform.position.x)
+			if (Player.transform.position.x < this.transform.position.x)
 				stepX = -1;
-			else if (Player.transform.position.x == Enemy.transform.position.x)
+			else if (Player.transform.position.x == this.transform.position.x)
 				stepX = 0;
-			if (Player.transform.position.y < Enemy.transform.position.y)
+			if (Player.transform.position.y < this.transform.position.y)
 				stepY = -1;
-			else if (Player.transform.position.y == Enemy.transform.position.y)
+			else if (Player.transform.position.y == this.transform.position.y)
 				stepY = 0;
 			float X = transform.position.x;
 			float Y = transform.position.y;

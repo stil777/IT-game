@@ -9,8 +9,15 @@ public class PlayerController : MonoBehaviour
 	private GameObject Enemy;
 	private GameObject Player;
 	private float maxSpeed = 4f;
+
 	public int health = 3;
 	public int stsCards = 0;
+	public int holyWater = 0;
+	public int keys = 0;
+	public bool readCard = false;
+	public bool policeBadge = false;
+	public bool unionCard = false;
+
 	private float lastHitTime = -3f;
 	private float repeatDamagePeriod = 3f;
 
