@@ -33,7 +33,8 @@ public class CameraFollow : MonoBehaviour
 		TrackPlayer ();
 		gui.guiText.text = "Health: " + ((int)(player.GetComponent<PlayerController> ().health)).ToString () + 
 			"\nSt's Cards: " + ((int)(player.GetComponent<PlayerController> ().stsCards)).ToString () + 
-			"\nHoly Water: " + ((int)(player.GetComponent<PlayerController> ().holyWater)).ToString ();
+			"\nHoly Water: " + ((int)(player.GetComponent<PlayerController> ().holyWater)).ToString () +
+			"\nKeys: " + ((int)(player.GetComponent<PlayerController> ().keys)).ToString ();
 	}
 
 	void TrackPlayer ()
