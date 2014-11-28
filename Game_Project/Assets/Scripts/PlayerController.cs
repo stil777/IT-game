@@ -7,9 +7,10 @@ public class PlayerController : MonoBehaviour
 	private Animator anim;
 	private bool facingRight = false;
 	private GameObject Enemy;
-	private GameObject Player;
-	private float maxSpeed = 4f;
+	//private GameObject Player;
+	public float maxSpeed = 4f;
 
+	public int maxHealth = 3;
 	public int health = 3;
 	public int stsCards = 0;
 	public int holyWater = 0;
@@ -24,10 +25,11 @@ public class PlayerController : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		//DontDestroyOnLoad (this);
 		myRigidbody = this.rigidbody2D;
 		anim = GetComponent<Animator> ();
 		Enemy = GameObject.FindGameObjectWithTag ("Enemy");
-		Player = GameObject.FindGameObjectWithTag ("Player");
+		//Player = GameObject.FindGameObjectWithTag ("Player");
 	}
 	
 	// Update is called once per frame
@@ -51,7 +53,7 @@ public class PlayerController : MonoBehaviour
 		}
 
 		//Taking damage
-		Vector2 hurtVector = Player.transform.position - Enemy.transform.position;
+		Vector2 hurtVector = this.transform.position - Enemy.transform.position;
 		if (Time.time > lastHitTime + repeatDamagePeriod)
 		{
 			if (health > 0)
