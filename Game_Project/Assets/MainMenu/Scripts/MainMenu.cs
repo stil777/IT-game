@@ -60,7 +60,7 @@ public class MainMenu : MonoBehaviour
 
 		if (GUI.Button(new Rect(Screen.width * .25f, Screen.height * .4f, Screen.width * .3f, Screen.height * .1f),"Start"))
 		{
-			Application.LoadLevel("Level1");
+			Application.LoadLevel("Level0");
 		}
 	}
 
