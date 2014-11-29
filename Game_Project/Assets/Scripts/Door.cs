@@ -3,6 +3,21 @@ using System.Collections;
 
 public class Door : MonoBehaviour
 {
+	private Animator anim;
+	private GameObject player;
+
+	void Start()
+	{
+		anim = GetComponent<Animator> ();
+		player = GameObject.FindGameObjectWithTag ("Player");
+	}
+
+	void Update()
+	{
+		if ((int)(player.GetComponent<PlayerController> ().stsCards) > 0)
+			anim.SetBool ("StCards", true);
+	}
+
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.tag == "Player")
