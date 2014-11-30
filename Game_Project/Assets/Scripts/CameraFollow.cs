@@ -28,15 +28,10 @@ public class CameraFollow : MonoBehaviour
 		return Mathf.Abs(transform.position.y - player.transform.position.y) > yMargin;
 	}
 
-	void Update ()
+	void FixedUpdate ()
 	{
 		TrackPlayer ();
-		gui.guiText.text = "Health: " + ((int)(player.GetComponent<PlayerController> ().health)).ToString () + 
-			" / " + ((int)(player.GetComponent<PlayerController> ().maxHealth)).ToString () +
-			"\nSt's Cards: " + ((int)(player.GetComponent<PlayerController> ().stsCards)).ToString () + 
-			"\nHoly Water: " + ((int)(player.GetComponent<PlayerController> ().holyWater)).ToString () +
-			"\nKeys: " + ((int)(player.GetComponent<PlayerController> ().keys)).ToString () +
-			"\nSpeed: " + ((int)(player.GetComponent<PlayerController> ().maxSpeed)).ToString ();
+		gui.guiText.text = "Health: " + ((int)(player.GetComponent<PlayerController> ().health)).ToString () + "   St's Cards: " + ((int)(player.GetComponent<PlayerController> ().stsCards)).ToString ();
 	}
 
 	void TrackPlayer ()
