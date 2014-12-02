@@ -45,15 +45,12 @@ public class ItemClass : MonoBehaviour
 								print ("You won a Game!");
 				
 						if (this.tag == "StCard") {
-				if (other.GetComponent<PlayerController> ().stsCards == 3) {isitaciv=124; OnGUI();}
+				if (other.GetComponent<PlayerController> ().stsCards == 3) {OnGUI();}
 						}
 				}
 		}
 
 	void OnGUI () {
-				if (isitaciv == 124) {
-						GUI.Box (new Rect (250, 250, 200, 30), "Achivment!");
-						print (isitaciv);
-				}
-		}
+		GUI.Button (new Rect (200, 200, 200, 30), "Achivment!");
+	}
 }
