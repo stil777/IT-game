@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
 				{
 					health--;
 					lastHitTime = Time.time;
-					int lvl= Application.loadedLevel;//перемещение в начало сцены при соприкосновении с охранником1
+					int lvl= Application.loadedLevel;//перемещение в начало сцены при соприкосновении с охранником
 					Application.LoadLevel(lvl);
 					//print("Health - " + health + "; Time: " + Time.time);
 				}
