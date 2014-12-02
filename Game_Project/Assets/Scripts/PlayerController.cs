@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
 	private Animator anim;
 	private bool facingRight = false;
 	private GameObject Enemy;
-	//private GameObject Player;
 	public float maxSpeed = 4f;
 
 	public int maxHealth = 3;
@@ -29,7 +28,6 @@ public class PlayerController : MonoBehaviour
 		myRigidbody = this.rigidbody2D;
 		anim = GetComponent<Animator> ();
 		Enemy = GameObject.FindGameObjectWithTag ("Enemy");
-		//Player = GameObject.FindGameObjectWithTag ("Player");
 	}
 	
 	// Update is called once per frame
@@ -64,11 +62,9 @@ public class PlayerController : MonoBehaviour
 					lastHitTime = Time.time;
 					int lvl= Application.loadedLevel;//перемещение в начало сцены при соприкосновении с охранником
 					Application.LoadLevel(lvl);
-					//print("Health - " + health + "; Time: " + Time.time);
 				}
 			}
 		}
-		//print (health);
 	}
 
 	void Flip ()
