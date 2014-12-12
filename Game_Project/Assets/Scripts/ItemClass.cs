@@ -2,8 +2,10 @@ using UnityEngine;
 using System.Collections;
 using System; 
 
+
 public class ItemClass : MonoBehaviour
 {	public int isitaciv= 123;
+	public bool showGUI = false; 
 	void OnTriggerEnter2D(Collider2D other)
 	{
 				if (other.tag == "Player") {
@@ -45,12 +47,16 @@ public class ItemClass : MonoBehaviour
 								print ("You won a Game!");
 				
 						if (this.tag == "StCard") {
-				if (other.GetComponent<PlayerController> ().stsCards == 3) {OnGUI();}
+				if (other.GetComponent<PlayerController> ().stsCards == 3) {showGUI=true; OnGUI();}
 						}
 				}
+	}
+	public void OnGUI() {
+		if (showGUI)
+		{
+			GUI.Button(new Rect (10, 20, 20, 3), "Achivment!", GUI.skin.button);
+			print (showGUI);	
 		}
-
-	void OnGUI () {
-		GUI.Button (new Rect (200, 200, 200, 30), "Achivment!");
+		GUI.Label(new Rect (100, 200, 200, 30), "Achivment!");
 	}
 }
