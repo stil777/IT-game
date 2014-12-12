@@ -4,7 +4,6 @@ using System.Collections;
 public class EnemyBehaviour : MonoBehaviour
 {
 	public Transform Target;
-	//private GameObject Enemy;
 	private GameObject Player;
 	private bool facingRight = false;
 	private float Range;
@@ -14,7 +13,6 @@ public class EnemyBehaviour : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		//Enemy = GameObject.FindGameObjectWithTag ("Enemy");
 		Player = GameObject.FindGameObjectWithTag ("Player");
 	}
 	
